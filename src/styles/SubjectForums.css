@@ -1,0 +1,16 @@
+.subject-item {
+    margin: 0.5rem; /* Add some margin for spacing */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    min-height: 50px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.d-flex {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(200px, 1fr)
+    ); /* Create columns layout */
+    gap: 1rem; /* Add gap between items */
+}

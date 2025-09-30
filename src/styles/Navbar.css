@@ -1,0 +1,42 @@
+.navbar {
+    --bs-navbar-brand-color: white;
+    font-family: "Gotu";
+    &.light {
+        background-color: rgb(1, 182, 152);
+    }
+    &.dark {
+        background: rgba(1, 155, 130, 0.79);
+    }
+    .nav-link {
+        --bs-nav-link-color: white;
+        --bs-nav-link-hover-color: rgb(245, 255, 191);
+    }
+    .navbar-toggler {
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+        --bs-navbar-toggler-border-color: white;
+        &:has(+ .show),
+        &:has(+ .collapsing) {
+            --bs-navbar-toggler-icon-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512"><path fill="white" d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z"/></svg>');
+        }
+    }
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        background-color: white !important;
+    }
+}
+#image {
+    text-align: center;
+    width: 90%;
+    background: url("lama.webp");
+    background-size: cover;
+    min-height: 500px;
+    font-size: xx-large;
+    color: white;
+    font-family: "Dancing Script";
+    @media screen and (max-width: 768px) {
+        background: url("lama-small.webp");
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+}

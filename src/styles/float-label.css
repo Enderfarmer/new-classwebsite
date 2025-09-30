@@ -1,0 +1,52 @@
+/* .form-floating {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.form-floating label {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 200000;
+    opacity: 0.7;
+}
+
+.form-floating input:focus ~ label,
+.form-floating textarea:focus ~ label {
+    top: 0;
+    font-size: small;
+    padding: 0 5px;
+    /* background-color: inherit;
+    backdrop-filter: blur(20px); */
+/* background: var(--bs-body-bg) !important;
+    opacity: 1;
+}
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating input:not(-webkit-autocomplete) ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label,
+.form-floating textarea:not(:-webkit-autocomplete) ~ label {
+    top: 0;
+    font-size: small;
+    opacity: 1;
+    padding: 0 2px;
+    height: 14px !important;
+    backdrop-filter: blur(10px);
+} */
+.form-floating > .form-control ~ label,
+.form-floating > .form-control ~ label {
+    opacity: 0.7;
+    transition: 300ms;
+}
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    transform: none;
+    top: -47%;
+    height: auto;
+
+    opacity: 1;
+    font-size: small;
+}

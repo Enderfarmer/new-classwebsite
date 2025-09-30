@@ -1,0 +1,3 @@
+[data-bs-theme="dark"] ul.slick-dots li button::before {
+    color: white;
+}
