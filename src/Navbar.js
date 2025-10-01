@@ -11,6 +11,7 @@ export default function Navbar() {
     const [active, setActive] = useState(false);
     const [theme, setTheme] = useCurrentTheme();
     const [authenticated, setAuthenticated] = useState(false);
+    const customColor = localStorage.getItem("customColor");
     onAuthStateChanged(auth, (user) => {
         if (user) {
             setAuthenticated(true);
@@ -19,7 +20,10 @@ export default function Navbar() {
     document.body.setAttribute("data-bs-theme", theme);
     return (
         <nav
-            className={`navbar border-bottom border-1 border-dark mb-2 ${theme}`}
+            className={`navbar border-bottom border-1 border-dark mb-2 ${theme} ${
+                !customColor && "default"
+            }`}
+            style={customColor ? { backgroundColor: customColor } : {}}
         >
             <a className="navbar-brand px-2" href="#/">
                 7D
@@ -130,6 +134,23 @@ export default function Navbar() {
                         <Link className="nav-link" to="/rätselspaßmitarti">
                             Rätselspaß mit Arti
                         </Link>
+                    </li>
+                    <li>
+                        <span className="nav-link">Navbarfarbe anpassen: </span>
+                        <input
+                            type="color"
+                            id="customColor"
+                            defaultValue={customColor || "#00c6de"}
+                            onInput={(e) => {
+                                localStorage.setItem(
+                                    "customColor",
+                                    e.target.value
+                                );
+                                document.querySelector(
+                                    ".navbar"
+                                ).style.backgroundColor = e.target.value;
+                            }}
+                        />
                     </li>
                 </ul>
             </div>

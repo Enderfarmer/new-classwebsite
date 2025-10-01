@@ -1,10 +1,10 @@
 .navbar {
     --bs-navbar-brand-color: white;
     font-family: "Gotu";
-    &.light {
+    &.default.light {
         background-color: #00c6de;
     }
-    &.dark {
+    &.default.dark {
         background: #32e9ff;
     }
     .nav-link {
