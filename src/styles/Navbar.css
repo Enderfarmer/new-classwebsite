@@ -2,10 +2,10 @@
     --bs-navbar-brand-color: white;
     font-family: "Gotu";
     &.light {
-        background-color: rgb(1, 182, 152);
+        background-color: #00c6de;
     }
     &.dark {
-        background: rgba(1, 155, 130, 0.79);
+        background: #32e9ff;
     }
     .nav-link {
         --bs-nav-link-color: white;
@@ -28,15 +28,16 @@
 #image {
     text-align: center;
     width: 90%;
-    background: url("lama.webp");
+    background: url("cat.webp");
     background-size: cover;
     min-height: 500px;
     font-size: xx-large;
     color: white;
     font-family: "Dancing Script";
     @media screen and (max-width: 768px) {
-        background: url("lama-small.webp");
+        background: url("cat-small.webp");
         background-position: right;
         background-repeat: no-repeat;
+        background-size: cover;
     }
 }

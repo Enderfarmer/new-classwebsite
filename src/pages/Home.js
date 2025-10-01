@@ -14,9 +14,9 @@ const Index = function () {
                 id="image"
                 className="d-flex m-5 px-3 flex-column justify-content-center align-items-center"
             >
-                Die lebhafteste Klasse am Stifts.
+                Die verrückteste Klasse am Stifts.
                 <div className="text-center">
-                    <b>7D</b>
+                    <b>8D</b>
                 </div>
             </div>
             <div data-aos="fade-right" className="container">
