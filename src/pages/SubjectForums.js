@@ -5,19 +5,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const subjects = [
-    { id: "deutsch", name: "Deutsch", color: "red" },
-    { id: "mathe", name: "Mathe", color: "blue" },
-    { id: "englisch", name: "Englisch", color: "green" },
-    { id: "geschichte", name: "Gesch.", color: "yellow" },
-    { id: "bio", name: "Biologie", color: "lime" },
-    { id: "physik", name: "BNT-T", color: "cyan" },
-    // { id: 'chemie', name: 'Chemie' },
-    // { id: 'informatik', name: 'Informatik' },
-    { id: "musik", name: "Musik", color: "skyblue" },
-    { id: "kunst", name: "BK", color: "pink" },
-    { id: "NWT", name: "NWT", color: "black" },
-    { id: "ethik", name: "Eth/Reli", color: "purple" },
-    { id: "geographie", name: "Geo", color: "brown" },
+    { id: "deutsch", name: "Deutsch", color: "red", text: "white" },
+    { id: "mathe", name: "Mathe", color: "blue", text: "white" },
+    { id: "englisch", name: "Englisch", color: "green", text: "white" },
+    { id: "geschichte", name: "Gesch.", color: "yellow", text: "black" },
+    { id: "bio", name: "Biologie", color: "lime", text: "black" },
+    { id: "physik", name: "Physik", color: "cyan", text: "black" },
+    { id: "chemie", name: "Chemie", color: "black", text: "white" },
+    { id: "informatik", name: "Informatik", color: "orange", text: "black" },
+    { id: "musik", name: "Musik", color: "skyblue", text: "black" },
+    { id: "kunst", name: "BK", color: "pink", text: "black" },
+    { id: "NWT", name: "NWT", color: "black", text: "white" },
+    { id: "ethik", name: "Eth/Reli", color: "purple", text: "white" },
+    { id: "geographie", name: "Geo", color: "brown", text: "white" },
+    { id: "gesellschaftskunde", name: "GK", color: "magenta", text: "white" },
+    { id: "spanish", name: "Spanisch", color: "gold", text: "black" },
+    { id: "french", name: "Französisch", color: "silver", text: "black" },
+    { id: "latin", name: "Latein", color: "teal", text: "white" },
 ];
 export default function SubjectForums() {
     return (
@@ -30,17 +34,7 @@ export default function SubjectForums() {
                         className="border border-1 rounded rounded-3 d-flex subject-item"
                     >
                         <div
-                            className={`h-100 w-25 d-flex align-items-center justify-content-center p-2 ${
-                                [
-                                    "NWT",
-                                    "Mathe",
-                                    "Englisch",
-                                    "Eth/Reli",
-                                    "Geo",
-                                ].includes(subject.name)
-                                    ? "text-white"
-                                    : "text-dark"
-                            }`}
+                            className={`h-100 w-25 d-flex align-items-center justify-content-center p-2 text-${subject.text}`}
                             style={{ background: subject.color }}
                         >
                             {subject.name}

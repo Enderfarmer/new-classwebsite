@@ -10,17 +10,7 @@ export default function ProtosList() {
                     className="border border-1 rounded rounded-3 d-flex subject-item"
                 >
                     <div
-                        className={`h-100 w-25 d-flex align-items-center justify-content-center p-2 pe-0 ${
-                            [
-                                "NWT",
-                                "Mathe",
-                                "Englisch",
-                                "Eth/Reli",
-                                "Geo",
-                            ].includes(subject.name)
-                                ? "text-white"
-                                : "text-dark"
-                        }`}
+                        className={`h-100 w-25 d-flex align-items-center justify-content-center p-2 pe-0 text-${subject.text}`}
                         style={{ background: subject.color }}
                     >
                         {subject.name}
