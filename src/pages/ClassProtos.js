@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import db, { auth } from "../db";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { beginWithCapital, formatDate } from "../utils";
+import { beginWithCapital, formatDate, removeXP } from "../utils";
 import DeleteIcon from "../components/DeleteIcon";
 import EditLink from "../components/EditLink";
 
@@ -70,6 +70,7 @@ export default function ClassProtos() {
                                       />
                                       <DeleteIcon
                                           onClick={() => {
+                                              removeXP(auth.currentUser, 500);
                                               remove(
                                                   ref(
                                                       db,

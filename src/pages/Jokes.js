@@ -12,6 +12,7 @@ import CreateJoke from "../components/CreateJoke";
 import { Spinner } from "react-bootstrap";
 import PencilIcon from "../components/PencilIcon";
 import DeleteIcon from "../components/DeleteIcon";
+import { removeXP } from "../utils";
 function Joke({ joke, index }) {
     const [editFormVisible, setEditFormVisible] = useState(false);
     const editFormSubmit = (e) => {
@@ -24,6 +25,7 @@ function Joke({ joke, index }) {
         );
     };
     const deleteFormSubmit = () => {
+        removeXP(auth.currentUser, 70);
         remove(ref(db, `jokes/${joke.id}`));
     };
     return (

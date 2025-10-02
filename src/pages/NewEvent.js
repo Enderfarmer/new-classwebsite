@@ -1,5 +1,6 @@
 import { push, ref } from "firebase/database";
 import db, { auth } from "../db";
+import { addXP } from "../utils";
 export default function NewEvent() {
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +12,10 @@ export default function NewEvent() {
             description,
             is_at,
             author: auth.currentUser.email,
-        }).then(() => window.history.back());
+        }).then(() => {
+            addXP(auth.currentUser, 150);
+            window.history.back();
+        });
     };
     return (
         <main className="d-flex align-items-center justify-content-center">

@@ -4,6 +4,7 @@ import ExerciseEditForm from "../components/ExerciseEditForm";
 import DeleteIcon from "../components/DeleteIcon";
 import EditLink from "../components/EditLink";
 import { Accordion } from "react-bootstrap";
+import { removeXP } from "../utils";
 
 export default function Exercise({ exercise, subject }) {
     return (
@@ -83,6 +84,9 @@ export default function Exercise({ exercise, subject }) {
                     <span
                         className="text-danger cursor-pointer"
                         onClick={() => {
+                            exercise.type && exercise.type === "quiz"
+                                ? removeXP(auth.currentUser, 400)
+                                : removeXP(auth.currentUser, 250);
                             remove(
                                 ref(db, `exercises/${subject}/${exercise.id}`)
                             );

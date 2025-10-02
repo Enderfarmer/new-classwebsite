@@ -2,6 +2,7 @@
 // import "aos/dist/aos.css";
 import Events from "../components/Events";
 import Exams from "../components/Exams";
+import TopUsers from "../components/TopUsers";
 import News from "../pages/News";
 import { JokesForHomePage } from "./Jokes";
 
@@ -19,6 +20,7 @@ const Index = function () {
                     <b>8D</b>
                 </div>
             </div>
+            <TopUsers />
             <div data-aos="fade-right" className="container">
                 <h2>Unsere Neuigkeiten:</h2>
                 <div>

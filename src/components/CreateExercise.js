@@ -1,6 +1,7 @@
 import { push, ref } from "firebase/database";
 import { useState } from "react";
 import db, { auth } from "../db";
+import { addXP } from "../utils";
 
 export default function CreateExercise({ subject }) {
     const [questions, setQuestions] = useState([
@@ -64,6 +65,7 @@ export default function CreateExercise({ subject }) {
                                 answer,
                                 author: auth.currentUser.email,
                             });
+                            addXP(auth.currentUser, 250);
                         } else {
                             const title = e.target.title.value;
                             push(ref(db, `exercises/${subject}`), {
@@ -72,6 +74,7 @@ export default function CreateExercise({ subject }) {
                                 type: "quiz",
                                 author: auth.currentUser.email,
                             });
+                            addXP(auth.currentUser, 400);
                         }
                         setFormVisible(false);
                     }}

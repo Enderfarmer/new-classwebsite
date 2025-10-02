@@ -3,6 +3,7 @@ import { push, ref } from "firebase/database";
 import db, { auth } from "../db"; // Adjust the import according to your project structure
 import { subjects } from "./SubjectForums";
 import DeleteIcon from "../components/DeleteIcon";
+import { addXP } from "../utils";
 
 export default function NewProto() {
     const [paragraphs, setParagraphs] = useState([""]);
@@ -29,6 +30,7 @@ export default function NewProto() {
                         content: paragraphs,
                         author: auth.currentUser.email,
                     }).then((value) => {
+                        addXP(auth.currentUser, 500);
                         window.location.hash = `/protokoll/${subject}/${value.key}`;
                     });
                 }}

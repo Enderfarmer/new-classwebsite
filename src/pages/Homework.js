@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { ref, onValue, set, get, push } from "firebase/database";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { beginWithCapital, addOrRemove } from "../utils";
+import { beginWithCapital, addOrRemove, addXP } from "../utils";
 
 export default function Homework() {
     const [homework, setHomework] = useState([]);
@@ -37,8 +37,8 @@ export default function Homework() {
         );
         get(homeworkRefDoneby).then((snapshot) => {
             console.log(snapshot.val());
-            const newDoneby = snapshot.val() || [];
-            addOrRemove(newDoneby, auth.currentUser.email);
+            let newDoneby = snapshot.val() || [];
+            newDoneby = addOrRemove(newDoneby, auth.currentUser.email);
             set(homeworkRefDoneby, newDoneby);
         });
     };
@@ -77,6 +77,7 @@ export default function Homework() {
                                                 .value,
                                         author: auth.currentUser.email,
                                     };
+                                    addXP(auth.currentUser, 300);
                                     push(
                                         ref(db, `homework/${subject}-homework`),
                                         newHomework
@@ -100,7 +101,10 @@ export default function Homework() {
                                 borderColor: "lime !important",
                             }}
                         >
-                            <img src="/add.svg" alt="Neuen Witz hinzufügen" />
+                            <img
+                                src="/add.svg"
+                                alt="Neue Hausaufgabe hinzufügen"
+                            />
                         </i>{" "}
                         Neue Hausaufgabe hinzufügen
                     </button>

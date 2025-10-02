@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../styles/custom-arrows.css";
-import { formatDate } from "../utils";
+import { formatDate, removeXP } from "../utils";
 import { PrevArrow, NextArrow } from "../components/Arrows";
 import DeleteIcon from "../components/DeleteIcon";
 import EditLink from "../components/EditLink";
@@ -81,15 +81,19 @@ const News = () => {
                                                 to={`/edit-news/${news.id}`}
                                             />
                                             <DeleteIcon
-                                                aria-label="Witz löschen"
-                                                onClick={() =>
+                                                aria-label="News löschen"
+                                                onClick={() => {
+                                                    removeXP(
+                                                        auth.currentUser,
+                                                        200
+                                                    );
                                                     remove(
                                                         ref(
                                                             db,
                                                             `news/${news.id}`
                                                         )
-                                                    )
-                                                }
+                                                    );
+                                                }}
                                             />
                                         </div>
                                     )}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { push, ref } from "firebase/database";
 import db, { auth } from "../db"; // Adjust the import according to your project structure
 import DeleteIcon from "../components/DeleteIcon";
+import { addXP } from "../utils";
 
 export default function NewNew() {
     const [title, setTitle] = useState("");
@@ -31,6 +32,7 @@ export default function NewNew() {
                             posted_at: Date.now(),
                             author: auth.currentUser.email,
                         }).then((value) => {
+                            addXP(auth.currentUser, 200);
                             window.location.hash = `/news/${value.key}`;
                         });
                     }

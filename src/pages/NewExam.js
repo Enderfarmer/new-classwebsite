@@ -1,6 +1,7 @@
 import { push, ref } from "firebase/database";
 import { subjects } from "./SubjectForums";
 import db, { auth } from "../db";
+import { addXP } from "../utils";
 export default function NewExam() {
     return (
         <div className="container">
@@ -16,7 +17,10 @@ export default function NewExam() {
                         type,
                         is_at: date,
                         author: auth.currentUser,
-                    }).then(() => window.history.back());
+                    }).then(() => {
+                        addXP(auth.currentUser, 125);
+                        window.history.back();
+                    });
                 }}
             >
                 <div className="form-group m-3">

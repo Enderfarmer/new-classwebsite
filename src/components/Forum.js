@@ -68,7 +68,10 @@ export default function Forum({ subject }) {
                                 borderColor: "lime !important",
                             }}
                         >
-                            <img src="/add.svg" alt="Neuen Witz hinzufügen" />
+                            <img
+                                src="/add.svg"
+                                alt="Neuen Forum-Post hinzufügen"
+                            />
                         </i>{" "}
                         Neuen Post hinzufügen
                     </button>

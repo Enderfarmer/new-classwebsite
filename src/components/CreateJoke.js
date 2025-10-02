@@ -1,6 +1,7 @@
 import { useState } from "react";
 import db, { auth } from "../db";
 import { push, ref } from "firebase/database";
+import { addXP } from "../utils";
 
 export default function CreateJoke() {
     const jokesRef = ref(db, "jokes");
@@ -14,6 +15,8 @@ export default function CreateJoke() {
         };
         push(jokesRef, newJoke).then(() => {
             setFormVisible(false);
+            // 70 XP per new joke
+            addXP(auth.currentUser, 70);
         });
     };
     return (
