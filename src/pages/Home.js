@@ -3,6 +3,7 @@
 import Events from "../components/Events";
 import Exams from "../components/Exams";
 import TopUsers from "../components/TopUsers";
+import { auth } from "../db";
 import News from "../pages/News";
 import { JokesForHomePage } from "./Jokes";
 
@@ -20,7 +21,10 @@ const Index = function () {
                     <b>8D</b>
                 </div>
             </div>
-            <TopUsers />
+            {auth.currentUser &&
+                auth.currentUser.email === "artem.kort@stiftsgymnasium.de" && (
+                    <TopUsers />
+                )}
             <div data-aos="fade-right" className="container">
                 <h2>Unsere Neuigkeiten:</h2>
                 <div>
