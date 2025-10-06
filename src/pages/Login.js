@@ -46,6 +46,7 @@ export default function Login() {
                                                     name: nameFromEMail(
                                                         user.email
                                                     ),
+                                                    email: user.email,
                                                     xp: 10,
                                                     level: 1,
                                                     badges: [],
