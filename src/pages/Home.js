@@ -6,6 +6,7 @@ import TopUsers from "../components/TopUsers";
 import { auth } from "../db";
 import News from "../pages/News";
 import { JokesForHomePage } from "./Jokes";
+import "../styles/Home.css";
 
 const Index = function () {
     // AOS.init();

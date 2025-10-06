@@ -26,7 +26,7 @@ export default function Navbar() {
             style={customColor ? { backgroundColor: customColor } : {}}
         >
             <a className="navbar-brand px-2" href="#/">
-                7D
+                8D
             </a>
             <span>
                 {!authenticated ? (

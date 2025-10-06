@@ -1,0 +1,16 @@
+#image {
+    text-align: center;
+    width: 90%;
+    background: url("cat.webp");
+    background-size: cover;
+    min-height: 500px;
+    font-size: xx-large;
+    color: white;
+    font-family: "Dancing Script";
+    @media screen and (max-width: 768px) {
+        background: url("cat-small.webp");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
