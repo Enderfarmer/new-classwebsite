@@ -16,9 +16,9 @@ export default function NewExam() {
                         subject,
                         type,
                         is_at: date,
-                        author: auth.currentUser,
+                        author: auth.currentUser.email,
                     }).then(() => {
-                        addXP(auth.currentUser, 125);
+                        // addXP(auth.currentUser, 125);
                         window.history.back();
                     });
                 }}
