@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Wrapper from "./Wrapper";
 import Login from "./pages/Login";
 import { ThemeContext } from "./context";
@@ -37,7 +37,7 @@ const TestPage = function () {
 function App() {
     return (
         <ThemeContext.Provider value={localStorage.getItem("theme") || "light"}>
-            <HashRouter>
+            <BrowserRouter>
                 <Routes>
                     <Route
                         path="/"
@@ -184,7 +184,7 @@ function App() {
                         element={<Wrapper component={<NewRiddle />} />}
                     />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         </ThemeContext.Provider>
     );
 }
